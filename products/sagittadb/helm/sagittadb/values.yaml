@@ -8,10 +8,8 @@ fullnameOverride: ""
 image:
   registry: ghcr.io
   repository: lynn-lee/sagittadb-backend
-  tag: "1.0.5"
+  tag: "1.0.5-dev.10.5899724"
   pullPolicy: IfNotPresent
-
-imagePullSecrets: []
 
 # ─── 后端（FastAPI）────────────────────────────────────────────────────────────
 backend:
@@ -77,7 +75,7 @@ frontend:
   image:
     registry: ghcr.io
     repository: lynn-lee/sagittadb-frontend
-    tag: "1.0.5"
+    tag: "1.0.5-dev.10.5899724"
     pullPolicy: IfNotPresent
   resources:
     requests:
@@ -149,7 +147,7 @@ integrity:
   required: true
   manifest: "/app/COMMERCIAL-MANIFEST.json"
   root: "/app"
-  manifestPublicKey: ""
+  manifestPublicKey: "Y9A__c2kUIHj4GMtcyWxQSchAyVzX-OQqA-_moEMjqI"
 
 # ─── PostgreSQL（内置 bitnami/postgresql）──────────────────────────────────────
 postgresql:
