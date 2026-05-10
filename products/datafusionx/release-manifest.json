@@ -4,23 +4,28 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "69ad5a3178ddde946287ba7cc859286cc2f11bfc54d9c497475abd8355947a2c",
+      "sha256": "b1b403498c8cd9af941a1071277dd5a466db67bb413676e1222093ed3b41cdde",
       "size": 683
     },
     {
       "path": "COMMERCIAL_DEPLOYMENT.md",
-      "sha256": "f2c20d38f2f89434d94aa7dc47dd679fb01c3348b85b855f224a06443940912e",
-      "size": 15793
+      "sha256": "a8d9ff7b01574d77e3c5025c90db17e2f318e86d271ac096d3c54dd4d45f6d82",
+      "size": 17141
+    },
+    {
+      "path": "CUSTOMER_DELIVERY_CHECKLIST.md",
+      "sha256": "f1da83a37b043bd3ae8a2a757b21bd7e2a9ea27aa00da56ce5f0b7d3eb52ef7e",
+      "size": 1605
     },
     {
       "path": "README.md",
-      "sha256": "c988f64db50e4cd0c8ebb4d1ef10840f4ce0a0edc8a8e03db532da5ae87e01a5",
-      "size": 1776
+      "sha256": "85cf5909147a4f5154c9938bf462d2fd6569af02353a76ae219007dd49cbfda2",
+      "size": 1811
     },
     {
       "path": "checksums.txt",
-      "sha256": "37d0e2d123d42941d3bc25e30410c88d89ba22145d0b14e190ecfb86d4ac54a6",
-      "size": 1844
+      "sha256": "a9bebd39615fa3e5fb88e408e2f184e8bf86648a2746f64338e24507558fea38",
+      "size": 1943
     },
     {
       "path": "deploy/docker-compose.yml",
@@ -29,7 +34,7 @@
     },
     {
       "path": "helm/datafusionx-commercial/Chart.yaml",
-      "sha256": "1ca1ed4f064953356a9d2925a6d2770c913b71dd91aed8642185ab3d8ed2baca",
+      "sha256": "15ae949a0d73715fde95364ccc9c0ee2f0ef952993e957e74f77e12130008502",
       "size": 185
     },
     {
@@ -84,7 +89,7 @@
     },
     {
       "path": "helm/datafusionx-commercial/values.yaml",
-      "sha256": "77fb4db8e487cc9511ba63506c2c3c8f6e93fa94eac29e3df70cb7f11f7d9c6b",
+      "sha256": "02a39f19ab0f4099be258bc9150179048443e111a5e222ea44bbe31712221a95",
       "size": 1076
     },
     {
@@ -93,12 +98,12 @@
       "size": 5984
     }
   ],
-  "generated_at": "2026-05-10T13:34:25.050157+00:00",
+  "generated_at": "2026-05-10T14:04:04.143502+00:00",
   "images": [
-    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.7.1ec0be3",
-    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.7.1ec0be3"
+    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.8.b0dba81",
+    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.8.b0dba81"
   ],
   "product": "datafusionx",
   "schema": 1,
-  "version": "0.1.0-dev.7.1ec0be3"
+  "version": "0.1.0-dev.8.b0dba81"
 }
