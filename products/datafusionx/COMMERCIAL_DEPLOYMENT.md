@@ -88,7 +88,7 @@ DataFusionX 参照 SagittaDB 的公开商业交付方式，使用 `.github/workf
 3. 渲染客户部署包，包内 Compose 和 Helm 只引用固定版本镜像。
 4. 生成 signed `release-manifest`、`.tar.gz` 和 `.sha256`。
 5. 校验部署包不包含源码、私钥、浮动镜像标签或源码构建配置。
-6. 同步最新部署入口和版本压缩包到 `Lynn-Lee/Public-Releases/products/datafusionx/`。
+6. 同步最新部署入口和版本压缩包到 `Lynn-Lee/Public-Releases/products/datafusionx/`；公开仓库根 `README.md` 是四个产品共享的商业发布门户，由 Public-Releases 仓库维护，DataFusionX 发布流程不会覆盖它。
 
 为避免 GitHub Actions artifact storage quota 被大包耗尽，商业部署包默认不上传为 Actions artifact；如确需临时留存，可配置仓库变量 `ENABLE_COMMERCIAL_RELEASE_ARTIFACT=true`。
 
