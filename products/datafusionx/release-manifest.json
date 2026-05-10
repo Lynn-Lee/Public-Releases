@@ -4,27 +4,27 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "d430ba25b93ffb40f52d7212e153635be44c67b35790a732caeaeb9c97c4d059",
-      "size": 683
+      "sha256": "c0b42b7ceff044d0aa9ba85217c1001c3b62b8f2efa5e09dbb60884d0d9fda35",
+      "size": 686
     },
     {
       "path": "COMMERCIAL_DEPLOYMENT.md",
-      "sha256": "2c5dce20aa6fe06aef79cc59f37ff5e5e75b258612a46ffc5a86a7ce4bbe297d",
-      "size": 17458
+      "sha256": "8e4356e50644f59f260bac75784bd865ef31e948985aeea798c07a3d87235c61",
+      "size": 17471
     },
     {
       "path": "CUSTOMER_DELIVERY_CHECKLIST.md",
-      "sha256": "6c6a1514c3b8064255d37d0e9dfdcfa5bbe047bb4ed2208a9a42e186edc0430d",
-      "size": 1663
+      "sha256": "0113a751bf44f03a4aae4af0bd847f2cf5256b1529283cd8dc1fd985a5307f88",
+      "size": 1667
     },
     {
       "path": "README.md",
-      "sha256": "defc2f391ba0f83c09c1b79c37c1727d12c70453bb118b26d7e4028a78258d31",
-      "size": 1810
+      "sha256": "ce373a6ebf17db3f0000a13f938861775c1a98456d20243940d294615f8dce1f",
+      "size": 1815
     },
     {
       "path": "checksums.txt",
-      "sha256": "3a159bdf00778f64ae62617238c29ec9f7a3eefd374a0523230557ca717d7623",
+      "sha256": "86409dd7310b77d4cd34d940b46c674aff1dc9cdd641c0001dd79ea9ff2bb9b3",
       "size": 1943
     },
     {
@@ -34,8 +34,8 @@
     },
     {
       "path": "helm/datafusionx-commercial/Chart.yaml",
-      "sha256": "224b3167afab0e190531e660f9ff32c2e88fb18140561ed587329ba1b5e15fee",
-      "size": 185
+      "sha256": "9cff951e5e063e6928e5af26500ed15b18cefd271d79c4c0618cefa40923721b",
+      "size": 187
     },
     {
       "path": "helm/datafusionx-commercial/templates/_helpers.tpl",
@@ -89,21 +89,21 @@
     },
     {
       "path": "helm/datafusionx-commercial/values.yaml",
-      "sha256": "49ae0dc2acd0c850546cb92453239913bfa9216f49f3f868cd1b1ad629a39661",
-      "size": 1076
+      "sha256": "4a1195587eb3cbdec6147add1d55ce3e1e071c834c96d1b549bd32e8579b404a",
+      "size": 1079
     },
     {
       "path": "tools/commercial-manifest.py",
-      "sha256": "679eac2a570c5414af4bb2c9503ec85c280a01ef5fb858883d89ed8a02289a87",
+      "sha256": "b5ac5c5181b2d7dab2bef20374401c1a12ad44f155bbecfa15cea47b0565b803",
       "size": 5984
     }
   ],
-  "generated_at": "2026-05-10T14:32:31.135121+00:00",
+  "generated_at": "2026-05-10T14:58:26.076098+00:00",
   "images": [
-    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.9.679313f",
-    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.9.679313f"
+    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.10.b6350d3",
+    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.10.b6350d3"
   ],
   "product": "datafusionx",
   "schema": 1,
-  "version": "0.1.0-dev.9.679313f"
+  "version": "0.1.0-dev.10.b6350d3"
 }

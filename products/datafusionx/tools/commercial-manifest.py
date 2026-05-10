@@ -63,7 +63,7 @@ def generate_keypair() -> None:
 
 
 def build_release_manifest(package_dir: Path, version: str, images: list[str]) -> dict[str, Any]:
-    """根据客户部署包内容生成 release manifest。"""
+    """根据商业部署包内容生成 release manifest。"""
     files = []
     for path in sorted(package_dir.rglob("*")):
         if not path.is_file():
@@ -92,7 +92,7 @@ def build_release_manifest(package_dir: Path, version: str, images: list[str]) -
 
 
 def sign_release(package_dir: Path, version: str, private_key_value: str, images: list[str]) -> None:
-    """签名客户部署包 release manifest。"""
+    """签名商业部署包 release manifest。"""
     manifest = build_release_manifest(package_dir, version, images)
     manifest_path = package_dir / "release-manifest.json"
     signature_path = package_dir / "release-manifest.sig"

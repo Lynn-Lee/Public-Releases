@@ -1,13 +1,13 @@
-# DataFusionX Enterprise 客户交付检查清单
+# DataFusionX Enterprise 商业交付检查清单
 
 ## 交付标识
 
-- 版本：`0.1.0-dev.9.679313f`
+- 版本：`0.1.0-dev.10.b6350d3`
 - 公开发布水印：`public-release`
-- 交付批次：`0.1.0-dev.9.679313f`
+- 交付批次：`0.1.0-dev.10.b6350d3`
 - 分发模式：`public-release`
-- 后端镜像：`ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.9.679313f`
-- 前端镜像：`ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.9.679313f`
+- 后端镜像：`ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.10.b6350d3`
+- 前端镜像：`ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.10.b6350d3`
 
 ## 发布方交付前检查
 
