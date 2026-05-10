@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | DataFusionX Enterprise | 轻量级数据同步控制台，把企业已有 CDC / Batch / Flink SQL / StarRocks 链路统一成可配置、可观测、可审计的控制面。 | [products/datafusionx](products/datafusionx/) | [products/datafusionx/releases](products/datafusionx/releases/) |
 | SagittaDB Enterprise | 企业级多引擎数据库管控平台，统一数据库实例、SQL 工单、在线查询、权限治理、运行诊断和审计合规。 | [products/sagittadb](products/sagittadb/) | [products/sagittadb/releases](products/sagittadb/releases/) |
-| SchemaForge 商业版 | 面向中文研发团队的数据建模与数据库变更治理平台，从中文需求到 ER 模型、数据字典、评审和 DDL 交付。 | [products/schemaforge](products/schemaforge/) | 首个商业发布后自动生成 |
+| SchemaForge 商业版 | 面向中文研发团队的数据建模与数据库变更治理平台，从中文需求到 ER 模型、数据字典、评审和 DDL 交付。 | [products/schemaforge](products/schemaforge/) | [products/schemaforge/releases](products/schemaforge/releases/) |
 | StreamForge 商业版 | 面向 StarRocks 实时数仓的数据集成控制平台，托管 CDC、Batch、Kafka、Flink SQL、SeaTunnel、运行监控和生产治理。 | [products/streamforge](products/streamforge/) | [products/streamforge/releases](products/streamforge/releases/) |
 
 ## 产品功能说明
