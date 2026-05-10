@@ -1,0 +1,24 @@
+image:
+  backend: ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.2.2e9bb2e
+  console: ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.2.2e9bb2e
+
+license:
+  serverUrl: https://license.example.com
+  publicKey: ""
+  customerId: ""
+  deploymentId: streamforge-private
+
+postgres:
+  image: postgres:16
+  database: streamforge
+  username: streamforge
+  password: change-me
+  storageSize: 20Gi
+
+service:
+  consolePort: 80
+  backendPort: 8080
+
+runtime:
+  cdcDryRun: "true"
+  batchDryRun: "true"

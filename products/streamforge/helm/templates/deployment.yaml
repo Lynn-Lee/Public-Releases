@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamforge-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: streamforge-backend
+  template:
+    metadata:
+      labels:
+        app: streamforge-backend
+    spec:
+      containers:
+        - name: backend
+          image: {{ .Values.image.backend | quote }}
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: postgres
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://streamforge-postgres:5432/{{ .Values.postgres.database }}
+            - name: SPRING_DATASOURCE_USERNAME
+              value: {{ .Values.postgres.username | quote }}
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: streamforge-secrets
+                  key: postgres-password
+            - name: STREAMFORGE_LICENSE_SERVER_URL
+              value: {{ .Values.license.serverUrl | quote }}
+            - name: STREAMFORGE_LICENSE_PUBLIC_KEY
+              value: {{ .Values.license.publicKey | quote }}
+            - name: STREAMFORGE_LICENSE_CUSTOMER_ID
+              value: {{ .Values.license.customerId | quote }}
+            - name: STREAMFORGE_LICENSE_DEPLOYMENT_ID
+              value: {{ .Values.license.deploymentId | quote }}
+            - name: STREAMFORGE_INTEGRITY_ENABLED
+              value: "true"
+            - name: STREAMFORGE_CDC_DRY_RUN
+              value: {{ .Values.runtime.cdcDryRun | quote }}
+            - name: STREAMFORGE_BATCH_DRY_RUN
+              value: {{ .Values.runtime.batchDryRun | quote }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamforge-console
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: streamforge-console
+  template:
+    metadata:
+      labels:
+        app: streamforge-console
+    spec:
+      containers:
+        - name: console
+          image: {{ .Values.image.console | quote }}
+          ports:
+            - containerPort: 80

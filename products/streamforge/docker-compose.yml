@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: ${STREAMFORGE_POSTGRES_IMAGE:-postgres:16}
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${STREAMFORGE_POSTGRES_DB:-streamforge}
+      POSTGRES_USER: ${STREAMFORGE_POSTGRES_USER:-streamforge}
+      POSTGRES_PASSWORD: ${STREAMFORGE_POSTGRES_PASSWORD:?请配置数据库密码}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  backend:
+    image: ${STREAMFORGE_BACKEND_IMAGE:?请配置后端镜像}
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${STREAMFORGE_POSTGRES_DB:-streamforge}
+      SPRING_DATASOURCE_USERNAME: ${STREAMFORGE_POSTGRES_USER:-streamforge}
+      SPRING_DATASOURCE_PASSWORD: ${STREAMFORGE_POSTGRES_PASSWORD:?请配置数据库密码}
+      STREAMFORGE_LICENSE_SERVER_URL: ${STREAMFORGE_LICENSE_SERVER_URL:-}
+      STREAMFORGE_LICENSE_PUBLIC_KEY: ${STREAMFORGE_LICENSE_PUBLIC_KEY:?请配置 License 公钥}
+      STREAMFORGE_LICENSE_CUSTOMER_ID: ${STREAMFORGE_LICENSE_CUSTOMER_ID:-}
+      STREAMFORGE_LICENSE_DEPLOYMENT_ID: ${STREAMFORGE_LICENSE_DEPLOYMENT_ID:-streamforge-private}
+      STREAMFORGE_INTEGRITY_ENABLED: "true"
+      STREAMFORGE_CDC_DRY_RUN: ${STREAMFORGE_CDC_DRY_RUN:-true}
+      STREAMFORGE_BATCH_DRY_RUN: ${STREAMFORGE_BATCH_DRY_RUN:-true}
+    ports:
+      - "${STREAMFORGE_BACKEND_PORT:-8080}:8080"
+
+  console:
+    image: ${STREAMFORGE_CONSOLE_IMAGE:?请配置前端镜像}
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${STREAMFORGE_CONSOLE_PORT:-5174}:80"
+
+volumes:
+  postgres-data:
