@@ -4,22 +4,22 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "808222acd1df4f5635e8cc4ffa9a759ccef263ba33a2e12921727cb82add5db9",
-      "size": 669
+      "sha256": "69ad5a3178ddde946287ba7cc859286cc2f11bfc54d9c497475abd8355947a2c",
+      "size": 683
     },
     {
       "path": "COMMERCIAL_DEPLOYMENT.md",
-      "sha256": "575e2428cde6a2bf38c001bde4796e57b551cc3b1cf07f98487f960ca91e3428",
-      "size": 14510
+      "sha256": "f2c20d38f2f89434d94aa7dc47dd679fb01c3348b85b855f224a06443940912e",
+      "size": 15793
     },
     {
       "path": "README.md",
-      "sha256": "41e377e9b8929482bd1f3fc4a162d040122b0009fa49af94f38959280d86e615",
-      "size": 1691
+      "sha256": "c988f64db50e4cd0c8ebb4d1ef10840f4ce0a0edc8a8e03db532da5ae87e01a5",
+      "size": 1776
     },
     {
       "path": "checksums.txt",
-      "sha256": "b34e4d30a0e16c66daa01120414ee232a5ecaff90791cc1cd905d37357103b3b",
+      "sha256": "37d0e2d123d42941d3bc25e30410c88d89ba22145d0b14e190ecfb86d4ac54a6",
       "size": 1844
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "path": "helm/datafusionx-commercial/Chart.yaml",
-      "sha256": "333d17e6057674dc172af79ee5a730b6b82a92e783a1f1f882a7e6df6ab9079e",
+      "sha256": "1ca1ed4f064953356a9d2925a6d2770c913b71dd91aed8642185ab3d8ed2baca",
       "size": 185
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "path": "helm/datafusionx-commercial/values.yaml",
-      "sha256": "fbd1767ad1fa05fcea956075936b656ad11e83efe0b81d0bc8fb2c7335f5eeb9",
+      "sha256": "77fb4db8e487cc9511ba63506c2c3c8f6e93fa94eac29e3df70cb7f11f7d9c6b",
       "size": 1076
     },
     {
@@ -93,12 +93,12 @@
       "size": 5984
     }
   ],
-  "generated_at": "2026-05-10T12:43:31.574188+00:00",
+  "generated_at": "2026-05-10T13:34:25.050157+00:00",
   "images": [
-    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.6.c99560d",
-    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.6.c99560d"
+    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.7.1ec0be3",
+    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.7.1ec0be3"
   ],
   "product": "datafusionx",
   "schema": 1,
-  "version": "0.1.0-dev.6.c99560d"
+  "version": "0.1.0-dev.7.1ec0be3"
 }
