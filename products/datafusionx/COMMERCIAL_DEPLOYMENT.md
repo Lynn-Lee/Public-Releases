@@ -114,6 +114,27 @@ PUBLIC_RELEASES_TOKEN
 
 `COMMERCIAL_MANIFEST_PRIVATE_KEY` 只用于商业镜像完整性 manifest 和客户发布包 manifest 签名，不得放入仓库和客户部署包。发布验签公钥已内置为 `7sE7Bn3CJGIAd-CCDpeX-05wjTFsaS4kbM3vKU0tWNM`，不需要配置为 GitHub Secret。`PUBLIC_RELEASES_TOKEN` 必须能写入 `Lynn-Lee/Public-Releases`，建议只授予该公开仓库的 contents read/write 权限。
 
+## 与 SagittaDB 发布流程对齐状态
+
+本次对比对象为同级 `SagittaDB` 项目的 `docs/public_commercial_delivery.md`、`.github/workflows/commercial-release.yml`、`scripts/build-commercial-images.sh` 和 `scripts/render-customer-package.py`。结论：DataFusionX 的商业版本发布主流程与 SagittaDB 一致，均由私有源码仓库构建商业镜像、渲染客户部署包、生成校验文件，并同步到 `Lynn-Lee/Public-Releases` 的产品目录；公开仓库根 `README.md` 继续作为 DataFusionX、SagittaDB、SchemaForge、StreamForge 共享门户独立维护，不由单产品发布流程覆盖。
+
+对齐项：
+
+- 触发条件一致：推送到 `main`、`release/**`、正式 `vX.Y.Z` tag，或手动 `workflow_dispatch`。
+- 版本规则一致：正式 tag 和手动版本生成稳定版本，普通分支生成 `<base>-dev.<run_number>.<short_sha>` 快照版本。
+- 镜像规则一致：后端和前端商业镜像推送到 GHCR，客户部署包只引用固定版本标签，不使用 `latest`。
+- 公开仓库规则一致：只更新 `products/<product>/` 和 `releases/v<version>/`，不覆盖 Public-Releases 根 README。
+- 安全检查一致：发布包和公开目录不得包含源码、私钥、授权中心 token、真实 License、sourcemap、源码 `build:` 配置或浮动镜像标签。
+- 授权中心一致：在线激活、在线刷新和离线授权均通过 `License-Server-Center`，并固定提交各自产品码。
+
+DataFusionX 当前保留的产品差异：
+
+- 包格式为 `DataFusionX-Enterprise-v<version>.tar.gz`；SagittaDB 当前为 `SagittaDB-Enterprise-v<version>.zip`。
+- DataFusionX 使用 `scripts/build-commercial-release.sh` 一个入口完成镜像构建、部署包渲染、签名和压缩；SagittaDB 由 workflow 分步调用 Docker build action 和 `scripts/render-customer-package.py`。
+- DataFusionX 客户包内置 `tools/commercial-manifest.py`、`release-manifest.json` 和 `release-manifest.sig`，并使用固定商业发布验签公钥校验发布包；SagittaDB 主要使用商业镜像 manifest 和 zip sha256 校验。
+- DataFusionX 当前客户包包含 Docker Compose、Helm Chart、环境模板和商业部署说明；SagittaDB 还包含独立 `LEGAL-NOTICE.md`、`upgrade.sh`、`verify-license.sh`、Nginx 配置和截图目录。后续如 DataFusionX 面向客户交付需要一键升级或独立法务说明，可按 SagittaDB 的客户包资产补齐。
+- DataFusionX 的商业发布签名 secret 名称为 `COMMERCIAL_MANIFEST_PRIVATE_KEY`；SagittaDB 为 `MANIFEST_PRIVATE_KEY`。二者含义一致，但为避免影响现有 workflow，当前不强行统一变量名。
+
 ## 客户部署流程
 
 如果客户环境无法访问 GHCR，可使用离线交付包中的镜像 tar。客户现场导入镜像：

@@ -2,5 +2,5 @@ apiVersion: v2
 name: datafusionx-commercial
 description: DataFusionX commercial private deployment chart.
 type: application
-version: 0.1.0-dev.5.ef00466
-appVersion: 0.1.0-dev.5.ef00466
+version: 0.1.0-dev.6.c99560d
+appVersion: 0.1.0-dev.6.c99560d
