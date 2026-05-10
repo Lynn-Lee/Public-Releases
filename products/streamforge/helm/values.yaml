@@ -1,12 +1,15 @@
 image:
-  backend: ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.10.a605590
-  console: ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.10.a605590
+  backend: ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.11.7b44ace
+  console: ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.11.7b44ace
 
 license:
   serverUrl: https://license.example.com
   publicKey: ""
   customerId: ""
   deploymentId: streamforge-private
+  requireOnlineRefresh: "true"
+  onlineRefreshGraceHours: "168"
+  maxOfflineDays: "366"
 
 postgres:
   image: postgres:16

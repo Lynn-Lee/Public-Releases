@@ -37,6 +37,12 @@ spec:
               value: {{ .Values.license.customerId | quote }}
             - name: STREAMFORGE_LICENSE_DEPLOYMENT_ID
               value: {{ .Values.license.deploymentId | quote }}
+            - name: STREAMFORGE_LICENSE_REQUIRE_ONLINE_REFRESH
+              value: {{ .Values.license.requireOnlineRefresh | quote }}
+            - name: STREAMFORGE_LICENSE_ONLINE_REFRESH_GRACE_HOURS
+              value: {{ .Values.license.onlineRefreshGraceHours | quote }}
+            - name: STREAMFORGE_LICENSE_MAX_OFFLINE_DAYS
+              value: {{ .Values.license.maxOfflineDays | quote }}
             - name: STREAMFORGE_INTEGRITY_ENABLED
               value: "true"
             - name: STREAMFORGE_CDC_DRY_RUN

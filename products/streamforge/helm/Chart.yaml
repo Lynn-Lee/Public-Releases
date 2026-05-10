@@ -2,5 +2,5 @@ apiVersion: v2
 name: streamforge-commercial
 description: StreamForge 商业版私有化部署包
 type: application
-version: 0.1.0-dev.10.a605590
-appVersion: 0.1.0-dev.10.a605590
+version: 0.1.0-dev.11.7b44ace
+appVersion: 0.1.0-dev.11.7b44ace
