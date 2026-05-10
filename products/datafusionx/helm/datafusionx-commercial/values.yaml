@@ -1,0 +1,53 @@
+global:
+  version: "0.1.0-dev.3.727bc8c"
+  publicUrl: "http://datafusionx.example.com"
+
+image:
+  backend: "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.3.727bc8c"
+  frontend: "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.3.727bc8c"
+  pullPolicy: IfNotPresent
+  pullSecrets: []
+
+secrets:
+  postgresPassword: "change-me"
+  jwtSecretKey: "change-me-at-least-32-bytes"
+  encryptionSecretKey: "change-me-at-least-32-bytes"
+  licensePublicKey: ""
+  licenseCustomerId: ""
+  licenseDeploymentId: "change-me-stable-deployment-id"
+  commercialIntegrityPublicKey: "7sE7Bn3CJGIAd-CCDpeX-05wjTFsaS4kbM3vKU0tWNM"
+
+license:
+  serverUrl: "https://license.loveai.asia"
+  filePath: "/app/licenses/datafusionx-license.json"
+
+postgres:
+  image: "postgres:16"
+  storage: "20Gi"
+
+redis:
+  image: "redis:7-alpine"
+
+backend:
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 8000
+
+frontend:
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 80
+
+worker:
+  replicas: 1
+
+beat:
+  replicas: 1
+
+ingress:
+  enabled: false
+  className: ""
+  host: "datafusionx.example.com"
+  tlsSecretName: ""

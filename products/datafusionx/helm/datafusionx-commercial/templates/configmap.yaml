@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "datafusionx-commercial.fullname" . }}-config
+  labels:
+    {{- include "datafusionx-commercial.labels" . | nindent 4 }}
+data:
+  APP_VERSION: {{ .Values.global.version | quote }}
+  ENVIRONMENT: "production"
+  LICENSE_REQUIRED: "true"
+  LICENSE_SERVER_URL: {{ .Values.license.serverUrl | quote }}
+  LICENSE_FILE_PATH: {{ .Values.license.filePath | quote }}
+  COMMERCIAL_INTEGRITY_REQUIRED: "true"
+  DATAFUSIONX_PUBLIC_URL: {{ .Values.global.publicUrl | quote }}
