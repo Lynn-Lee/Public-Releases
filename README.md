@@ -8,20 +8,20 @@
 
 | 产品 | 最新发布版本 | 部署入口 |
 | --- | --- | --- |
-| StreamForge 商业版 | 0.1.0-dev.3.0c030c7 | [products/streamforge](products/streamforge/) |
+| StreamForge 商业版 | 0.1.0-dev.4.6319794 | [products/streamforge](products/streamforge/) |
 
 ## StreamForge 商业版
 
 StreamForge 商业版通过公开商业部署包交付，并使用固定版本商业容器镜像：
 
-- `ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.3.0c030c7`
-- `ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.3.0c030c7`
+- `ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.4.6319794`
+- `ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.4.6319794`
 
-请从 [products/streamforge/releases/v0.1.0-dev.3.0c030c7](products/streamforge/releases/v0.1.0-dev.3.0c030c7/) 下载部署包，校验 sha256 后按包内 README 部署。
+请从 [products/streamforge/releases/v0.1.0-dev.4.6319794](products/streamforge/releases/v0.1.0-dev.4.6319794/) 下载部署包，校验 sha256 后按包内 README 部署。
 
 ```bash
-cd products/streamforge/releases/v0.1.0-dev.3.0c030c7
-shasum -a 256 -c StreamForge-Commercial-v0.1.0-dev.3.0c030c7.zip.sha256
+cd products/streamforge/releases/v0.1.0-dev.4.6319794
+shasum -a 256 -c StreamForge-Commercial-v0.1.0-dev.4.6319794.zip.sha256
 ```
 
 首次部署可进入试用期；正式生产请在控制台商业授权页完成在线激活或离线 Challenge-Response 激活。
