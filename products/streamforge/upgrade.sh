@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-TARGET_VERSION="${1:-0.1.0-dev.2.2e9bb2e}"
+TARGET_VERSION="${1:-0.1.0-dev.3.0c030c7}"
 BACKEND_HEALTH_URL="${BACKEND_HEALTH_URL:-http://127.0.0.1:8080/api/auth/health}"
 CONSOLE_HEALTH_URL="${CONSOLE_HEALTH_URL:-http://127.0.0.1:5174/}"
 
