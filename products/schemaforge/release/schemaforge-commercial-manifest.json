@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-05-10T12:11:57.366472+00:00",
+  "images": {
+    "api": "ghcr.io/lynn-lee/schemaforge-api:0.1.0-dev.4.1f58a50",
+    "web": "ghcr.io/lynn-lee/schemaforge-web:0.1.0-dev.4.1f58a50"
+  },
+  "package": {
+    "files": [
+      {
+        "path": ".env.example",
+        "sha256": "a07cc6945387cbda6b18533b4b356e5b1e5608d57b3257b32a87a6277be1f21c"
+      },
+      {
+        "path": "README.md",
+        "sha256": "9202ea6d563f8290153fcc589dd95d41c55cf82c5ab2ccf00bb8b0cd262725bb"
+      },
+      {
+        "path": "docker-compose.yml",
+        "sha256": "60c057fa7320ed0d8b17ef6973626d4c2697504de2b9713cb516e7549cac8d02"
+      },
+      {
+        "path": "nginx.conf",
+        "sha256": "09e5a6246c68a2b67573ad8536de6979e633fd50b37127877a01c220bcc43e91"
+      }
+    ]
+  },
+  "product": "schemaforge",
+  "runtime": {
+    "files": [
+      {
+        "path": "/opt/schemaforge/runtime/schemaforge-runtime",
+        "sha256": "2ec47941bcc163517a75b4ac8f2c48834059a41eed3075621e5cc3eb6d16ed13"
+      }
+    ]
+  },
+  "schema": "schemaforge-commercial-manifest/v1",
+  "version": "0.1.0-dev.4.1f58a50"
+}

@@ -1,13 +1,35 @@
-# SchemaForge 商业版
+# SchemaForge 商业版 0.1.0-dev.4.1f58a50
 
-SchemaForge 商业版用于数据库 Schema 设计、变更评审、DDL 发布和结构治理，面向需要协作管理数据库结构变更的研发、DBA 和平台团队。
+这是 SchemaForge 商业版客户部署包，只包含生产部署配置、版本化商业镜像引用、Helm Chart 和发布完整性清单，不包含 SchemaForge 源码。
 
-当前目录是 SchemaForge 商业部署包的预留发布入口。首个商业版本发布后，自动发布流程会同步最新部署文件到本目录，并将版本压缩包和 sha256 校验文件写入 `releases/v<version>/`。
+## 镜像
 
-## 部署入口
+- API / Worker: `ghcr.io/lynn-lee/schemaforge-api:0.1.0-dev.4.1f58a50`
+- Web: `ghcr.io/lynn-lee/schemaforge-web:0.1.0-dev.4.1f58a50`
 
-首个商业发布完成后，请按本目录中的 `README.md`、`.env.example`、Docker Compose 或 Helm 文件完成部署。发布包只包含部署配置、校验文件和固定版本商业镜像引用，不包含 SchemaForge 源码、私钥、客户 License、激活码或镜像仓库凭据。
+## Docker Compose 部署
 
-## 安全说明
+```bash
+cp .env.example .env
+# 编辑 .env，替换所有 change-me 值，并填写 License / 域名配置。
+docker compose pull
+docker compose up -d postgres redis
+docker compose run --rm api schemaforge-runtime migrate
+docker compose up -d
+docker compose ps
+```
 
-共享日志或配置前，请移除 `.env`、License 文件、激活码、Token、私钥和生产连接串。
+## Kubernetes / Helm 部署
+
+```bash
+tar -xzf schemaforge-helm-chart.tgz
+helm upgrade --install schemaforge ./schemaforge \
+  --set config.jwtSecret='<change-me>' \
+  --set config.secretEncryptionKey='<change-me>' \
+  --set config.licensePublicKey='<license-public-key>' \
+  --set config.releaseManifestPublicKey='<release-manifest-public-key>'
+```
+
+## License 授权
+
+首次部署前请准备 License-Server-Center 配置或离线 license 文件。共享日志或配置时，不要打包 license、私钥、激活码或 .env 中的敏感值。
