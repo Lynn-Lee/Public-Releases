@@ -2,18 +2,18 @@
 
 ## 交付标识
 
-- 版本：`0.1.0-dev.8.b0dba81`
-- 客户标识：`public-release`
-- 交付批次：`0.1.0-dev.8.b0dba81`
-- 分发模式：`public-snapshot`
-- 后端镜像：`ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.8.b0dba81`
-- 前端镜像：`ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.8.b0dba81`
+- 版本：`0.1.0-dev.9.679313f`
+- 公开发布水印：`public-release`
+- 交付批次：`0.1.0-dev.9.679313f`
+- 分发模式：`public-release`
+- 后端镜像：`ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.9.679313f`
+- 前端镜像：`ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.9.679313f`
 
 ## 发布方交付前检查
 
-- 已记录后端镜像 digest、前端镜像 digest、压缩包 sha256、release manifest 签名和 License 授权号。
-- 客户专属交付使用私有 registry、客户 token、限期下载链接或离线镜像包，不把客户专属镜像公开到 Public-Releases。
-- Public-Releases 只保留公开快照部署入口和公开快照包，不包含客户专属 License、客户专属镜像 tar、私钥、Token 或真实 `.env`。
+- 已记录后端镜像 digest、前端镜像 digest、压缩包 sha256、release manifest 签名和公开发布批次。
+- Public-Releases 是商业版公开下载和推广主通道；客户授权、激活码、部署指纹和 License 授权号由授权中心单独签发和管理，不进入公开包。
+- Public-Releases 只保留公开商业部署入口和版本压缩包，不包含真实 License、客户 License、镜像 tar、私钥、Token、真实 `.env`、源码或 sourcemap。
 - 后端商业镜像已确认存在 `/app/commercial/commercial-build.json`，且受保护目录未保留业务 `.py` 源码。
 - 前端商业镜像只包含生产静态资源，不包含 sourcemap、源码目录或源码构建上下文。
 
