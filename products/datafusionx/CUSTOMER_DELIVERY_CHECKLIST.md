@@ -2,12 +2,12 @@
 
 ## 交付标识
 
-- 版本：`0.1.0-dev.16.9e54f90`
+- 版本：`0.1.0-dev.17.022bbf9`
 - 公开发布水印：`public-release`
-- 交付批次：`0.1.0-dev.16.9e54f90`
+- 交付批次：`0.1.0-dev.17.022bbf9`
 - 分发模式：`public-release`
-- 后端镜像：`ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.16.9e54f90`
-- 前端镜像：`ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.16.9e54f90`
+- 后端镜像：`ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.17.022bbf9`
+- 前端镜像：`ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.17.022bbf9`
 
 ## 发布方交付前检查
 
