@@ -1,6 +1,6 @@
 image:
-  backend: ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.14.c25b4da
-  console: ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.14.c25b4da
+  backend: ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.15.5d80591
+  console: ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.15.5d80591
 
 license:
   serverUrl: https://license.example.com
