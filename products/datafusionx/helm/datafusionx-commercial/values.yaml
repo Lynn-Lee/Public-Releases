@@ -1,10 +1,10 @@
 global:
-  version: "0.1.0-dev.11.8cfc2e6"
+  version: "0.1.0-dev.12.d3277a5"
   publicUrl: "http://datafusionx.example.com"
 
 image:
-  backend: "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.11.8cfc2e6"
-  frontend: "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.11.8cfc2e6"
+  backend: "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.12.d3277a5"
+  frontend: "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.12.d3277a5"
   pullPolicy: IfNotPresent
   pullSecrets: []
 
