@@ -4,7 +4,7 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "48f36299cf5621391f4176785b74a96a2c032318e6e0107c082c9f926fbc3c84",
+      "sha256": "3ae375d2d6ac80130e28ecbe3e74e4393ac0e20b7db934d9e820d724a457597f",
       "size": 686
     },
     {
@@ -14,17 +14,17 @@
     },
     {
       "path": "CUSTOMER_DELIVERY_CHECKLIST.md",
-      "sha256": "dd40f521679f1ac91bacc4ec4797a71d8bda5dc6a7aec7d31cf8ccd28ac136da",
+      "sha256": "0db3c44b099e18f039277908a09564b350ffe7c82adf96c68a70b8d63c9bcb9d",
       "size": 1667
     },
     {
       "path": "README.md",
-      "sha256": "da2cb6396c1ee78fde43d269c3c13a01176084be7d9ee7c70d62f3c6f8d315e3",
+      "sha256": "e9bef75eae3594f4dbaae11134c6903d0ea2b0d16a9a16f958b63685035f7395",
       "size": 1815
     },
     {
       "path": "checksums.txt",
-      "sha256": "30540dff2ec94ca3fe885debe84215aac64d1342b5f89f66091fd180cff81e19",
+      "sha256": "723f1f74192aad9004826231d448ad91a546c2e73da491be9f79b97dc073865b",
       "size": 1943
     },
     {
@@ -34,7 +34,7 @@
     },
     {
       "path": "helm/datafusionx-commercial/Chart.yaml",
-      "sha256": "68dc97fdb095961105ba4587f5e386f3e38cee03731c24bc2f9f2e4994868590",
+      "sha256": "d126376eef4a4d02495fb2ec7ff15606df731a110480c8a36901ff4fc6514bc7",
       "size": 187
     },
     {
@@ -89,7 +89,7 @@
     },
     {
       "path": "helm/datafusionx-commercial/values.yaml",
-      "sha256": "3c18552cb807f905fa4549a5180dbcc49ef58571cab55a1b2d67d8c58a171093",
+      "sha256": "2e84e2452373fc2813311016cb6f70c963b00712647d02604262223a68ff8411",
       "size": 1079
     },
     {
@@ -98,12 +98,12 @@
       "size": 5984
     }
   ],
-  "generated_at": "2026-05-11T08:18:28.291705+00:00",
+  "generated_at": "2026-05-11T08:25:35.949348+00:00",
   "images": [
-    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.12.d3277a5",
-    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.12.d3277a5"
+    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.13.916c1a8",
+    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.13.916c1a8"
   ],
   "product": "datafusionx",
   "schema": 1,
-  "version": "0.1.0-dev.12.d3277a5"
+  "version": "0.1.0-dev.13.916c1a8"
 }
