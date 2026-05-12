@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-BACKEND_IMAGE="${STREAMFORGE_BACKEND_IMAGE:-ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.17.4f1eb23}"
-CONSOLE_IMAGE="${STREAMFORGE_CONSOLE_IMAGE:-ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.17.4f1eb23}"
+BACKEND_IMAGE="${STREAMFORGE_BACKEND_IMAGE:-ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.18.8532624}"
+CONSOLE_IMAGE="${STREAMFORGE_CONSOLE_IMAGE:-ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.18.8532624}"
 COSIGN_KEY="${STREAMFORGE_COSIGN_PUBLIC_KEY:-}"
 
 die() {
