@@ -1,13 +1,13 @@
-# DataFusionX Enterprise v0.1.0-dev.18.87cbb2b
+# DataFusionX Enterprise v0.1.0-dev.19.6c17950
 
 这是 DataFusionX Enterprise 商业部署包。部署包只包含生产部署配置、Helm Chart、环境变量模板、校验清单和固定版本商业镜像引用，不包含 DataFusionX 源码。
 
 ## 镜像
 
-- 后端 / Worker / Beat：`ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.18.87cbb2b`
-- 前端：`ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.18.87cbb2b`
+- 后端 / Worker / Beat：`ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.19.6c17950`
+- 前端：`ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.19.6c17950`
 - 公开发布水印：`public-release`
-- 交付批次标识：`0.1.0-dev.18.87cbb2b`
+- 交付批次标识：`0.1.0-dev.19.6c17950`
 - 分发模式：`public-release`
 
 生产环境不要使用 `latest`，请保留 `.env.example` 和 Helm values 中的明确版本标签。
@@ -39,7 +39,7 @@ helm upgrade --install datafusionx ./helm/datafusionx-commercial \
 ## 校验
 
 ```bash
-shasum -a 256 -c DataFusionX-Enterprise-v0.1.0-dev.18.87cbb2b.tar.gz.sha256
+shasum -a 256 -c DataFusionX-Enterprise-v0.1.0-dev.19.6c17950.tar.gz.sha256
 python tools/commercial-manifest.py verify-release \
   --package-dir . \
   --public-key '<商业发布验签公钥>'
