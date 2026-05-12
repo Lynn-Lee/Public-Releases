@@ -118,6 +118,8 @@ docker compose -f deploy/docker-compose.yml --env-file .env pull
 docker compose -f deploy/docker-compose.yml --env-file .env up -d
 ```
 
+升级既有商业部署时，应复用上一版本 `.env`，仅替换 `DATAFUSIONX_VERSION`、`DATAFUSIONX_BACKEND_IMAGE` 和 `DATAFUSIONX_FRONTEND_IMAGE` 为目标固定版本，并保留 License、密钥、部署 ID、数据库密码和外部数据面连接配置。升级后必须验证 `/api/v1/health` 返回目标版本，前端首页可访问，且静态资源包含当前品牌文案：`Plan the Sync, Guard the Change`、`DataFusionX. Control-Plane Orchestration, DDL Guard, Run Observability. Copyright © 2026 Lynn-Lee. All rights reserved.` 和 `DataFusionX｜规划同步 . 守护变更`。
+
 公开仓库是商业版下载和推广入口，但不是授权边界；授权边界由 `License-Server-Center` 签发的 License、客户 ID、部署指纹、版本范围、功能和额度共同控制。发布方应记录压缩包 sha256、release manifest 签名、后端镜像 digest、前端镜像 digest、公开发布批次和 License 授权号。
 
 GitHub Secrets 必须配置：
