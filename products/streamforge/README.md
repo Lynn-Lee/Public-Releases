@@ -1,4 +1,4 @@
-# StreamForge 商业版 v0.1.0-dev.16.caefc1e
+# StreamForge 商业版 v0.1.0-dev.17.4f1eb23
 
 > Forge Every Stream into Analytics  
 > 让实时数据流淬炼成分析力
@@ -7,8 +7,8 @@
 
 ## 镜像
 
-- 后端：`ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.16.caefc1e`
-- 控制台：`ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.16.caefc1e`
+- 后端：`ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.17.4f1eb23`
+- 控制台：`ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.17.4f1eb23`
 
 生产环境不要使用 `latest`，请保留 `.env` 中的明确版本标签。
 
@@ -28,8 +28,8 @@ docker compose ps
 
 ```bash
 helm upgrade --install streamforge ./helm \
-  --set image.backend='ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.16.caefc1e' \
-  --set image.console='ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.16.caefc1e' \
+  --set image.backend='ghcr.io/lynn-lee/streamforge/backend-commercial:0.1.0-dev.17.4f1eb23' \
+  --set image.console='ghcr.io/lynn-lee/streamforge/console-commercial:0.1.0-dev.17.4f1eb23' \
   --set license.publicKey='<ed25519-public-key>' \
   --set postgres.password='<password>'
 ```
@@ -37,7 +37,7 @@ helm upgrade --install streamforge ./helm \
 ## 升级
 
 ```bash
-./upgrade.sh 0.1.0-dev.16.caefc1e
+./upgrade.sh 0.1.0-dev.17.4f1eb23
 ```
 
 升级脚本会更新镜像标签、拉取镜像、重建服务并检查前后端健康状态。
