@@ -2,8 +2,8 @@ apiVersion: v2
 name: sagittadb
 description: SagittaDB 矢准数据 — 企业级多引擎数据库管控平台
 type: application
-version: 2.0.0-dev.15.3c8205b
-appVersion: "2.0.0-dev.15.3c8205b"
+version: 2.0.0-dev.17.8e8ece9
+appVersion: "2.0.0-dev.17.8e8ece9"
 
 keywords:
   - database
@@ -11,7 +11,7 @@ keywords:
   - dba
   - workflow
 
-home: https://sagitta.loveai.asia
+home: https://github.com/Lynn-Lee/Public-Releases/tree/main/products/sagittadb
 maintainers:
   - name: SagittaDB Team
 
