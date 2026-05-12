@@ -4,27 +4,27 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "f426581f987958171f0603d3e73165f4a2c23e5dfd13786d707045a54dacf29d",
-      "size": 791
+      "sha256": "b4fc40a0b4e6156ba57424a793fc54c2c28fc2b72a5259eafd25aaae15c7be51",
+      "size": 746
     },
     {
       "path": "COMMERCIAL_DEPLOYMENT.md",
-      "sha256": "630e60a92333a16e87103812774c2aba9613ef92ae5e4be113b856d30e95568a",
-      "size": 18077
+      "sha256": "78732dc2d7349488ee9c6a76664c88739c1d9460407b449a7489ccb07ceed6c0",
+      "size": 18713
     },
     {
       "path": "CUSTOMER_DELIVERY_CHECKLIST.md",
-      "sha256": "431a1f4e288420654945ae88c96c50ac6f2a922b02eb2875361b59ddb1b74d93",
-      "size": 1667
+      "sha256": "eed3d5a6c9837a57f470ff07cfd442ce36f814caa80a40aaccc5ef2cfbcbb09c",
+      "size": 1607
     },
     {
       "path": "README.md",
-      "sha256": "7926cb1409ce651930ccfd2b24fd9cacc67a08358fc7354346404abb6393855f",
-      "size": 1815
+      "sha256": "5f467604007b59bb1bec0d8b789517e8dd1074fb5253c56669d761fae876ddab",
+      "size": 1740
     },
     {
       "path": "checksums.txt",
-      "sha256": "243eb3bc1ee8cecce925fb1eebacd0a035c15943eef7b462b42b5270916804ee",
+      "sha256": "53b798bc190832e5831a67564677ff300c7af9d9b71f3af24f56efa782dea49f",
       "size": 1943
     },
     {
@@ -34,8 +34,8 @@
     },
     {
       "path": "helm/datafusionx-commercial/Chart.yaml",
-      "sha256": "f52911b2a2dec18f9ef5a1d9d7a646e2cdae066e6ff851619864bd94183a8446",
-      "size": 187
+      "sha256": "de384305e9ae59b11b5a0d2e81165f4e4a515dc834da0ce6ee3722510d150228",
+      "size": 157
     },
     {
       "path": "helm/datafusionx-commercial/templates/_helpers.tpl",
@@ -89,8 +89,8 @@
     },
     {
       "path": "helm/datafusionx-commercial/values.yaml",
-      "sha256": "0fbd4c35f2e7fa4d8de940ddf1a3a1e2c6a32adea2d736f2111a3cb9c5d37423",
-      "size": 1079
+      "sha256": "adc3630992ac844bc21ae0f05e38737c7d2bcf5bf96065cd3dadfb51ebd11c11",
+      "size": 1034
     },
     {
       "path": "tools/commercial-manifest.py",
@@ -98,12 +98,12 @@
       "size": 5984
     }
   ],
-  "generated_at": "2026-05-12T16:22:27.749064+00:00",
+  "generated_at": "2026-05-12T16:40:44.540653+00:00",
   "images": [
-    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0-dev.26.a9b7689",
-    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0-dev.26.a9b7689"
+    "ghcr.io/lynn-lee/datafusionx-backend:0.1.0",
+    "ghcr.io/lynn-lee/datafusionx-frontend:0.1.0"
   ],
   "product": "datafusionx",
   "schema": 1,
-  "version": "0.1.0-dev.26.a9b7689"
+  "version": "0.1.0"
 }

@@ -90,9 +90,10 @@ DataFusionX 参照 SagittaDB 的公开商业交付方式，使用 `.github/workf
 
 触发方式：
 
-- 推送到 `main` 或 `release/**`：生成快照版本，例如 `0.1.0-dev.123.abcdef0`。
-- 推送正式 tag `vX.Y.Z`：生成正式版本 `X.Y.Z`。
-- 手动 `workflow_dispatch`：填写 `version` 时生成指定正式版本；留空时生成快照版本；默认发布到 Public-Releases，公开发布水印固定为 `public-release`。
+- 推送到 `main`：只触发源码 CI 和版本记录，不构建商业部署包。
+- 推送到 `release/**`：生成候选版本，例如 `0.1.0-rc.123.abcdef0`，用于内部预验收；默认不发布到 Public-Releases。
+- 推送正式 tag `vX.Y.Z`：生成正式版本 `X.Y.Z`，并同步 Public-Releases，作为最终商业交付版本。
+- 手动 `workflow_dispatch`：填写 `version` 时生成指定版本；留空时生成快照版本；默认不发布到 Public-Releases，只有显式勾选 `publish_public_repo` 时才公开发布。
 
 工作流会自动执行：
 
@@ -101,7 +102,7 @@ DataFusionX 参照 SagittaDB 的公开商业交付方式，使用 `.github/workf
 3. 渲染公开商业部署包，包内 Compose 和 Helm 只引用固定版本镜像。
 4. 生成 signed `release-manifest`、`.tar.gz` 和 `.sha256`。
 5. 校验部署包不包含源码、私钥、真实 License、激活码、客户部署指纹、授权中心 token、sourcemap、浮动镜像标签或源码构建配置，并校验客户交付清单、商业构建水印和后端受保护目录源码清理状态。
-6. 同步最新部署入口和版本压缩包到 `Lynn-Lee/Public-Releases/products/datafusionx/`；公开仓库根 `README.md` 是四个产品共享的商业发布门户，由 Public-Releases 仓库维护，DataFusionX 发布流程不会覆盖它。
+6. 仅正式 tag 或显式手动发布时，同步最新部署入口和版本压缩包到 `Lynn-Lee/Public-Releases/products/datafusionx/`；公开仓库根 `README.md` 是四个产品共享的商业发布门户，由 Public-Releases 仓库维护，DataFusionX 发布流程不会覆盖它。
 
 为避免 GitHub Actions 制品存储配额被大包耗尽，商业部署包默认不上传为 Actions artifact；如确需临时留存，可配置仓库变量 `ENABLE_COMMERCIAL_RELEASE_ARTIFACT=true`。
 
@@ -133,12 +134,12 @@ PUBLIC_RELEASES_TOKEN
 
 ## 与 SagittaDB 发布流程对齐状态
 
-本次对比对象为同级 `SagittaDB` 项目的 `docs/public_commercial_delivery.md`、`.github/workflows/commercial-release.yml`、`scripts/build-commercial-images.sh` 和 `scripts/render-customer-package.py`。结论：DataFusionX 的商业版本发布主流程与 SagittaDB 一致，均由私有源码仓库构建商业镜像、渲染商业部署包、生成校验文件，并同步到 `Lynn-Lee/Public-Releases` 的产品目录；公开仓库根 `README.md` 继续作为 DataFusionX、SagittaDB、SchemaForge、StreamForge 共享门户独立维护，不由单产品发布流程覆盖。
+本次对比对象为同级 `SagittaDB` 项目的 `docs/public_commercial_delivery.md`、`.github/workflows/commercial-release.yml`、`scripts/build-commercial-images.sh` 和 `scripts/render-customer-package.py`。结论：DataFusionX 的商业版本发布包内容与 SagittaDB 保持一致，均由私有源码仓库构建商业镜像、渲染商业部署包、生成校验文件，并在正式交付时同步到 `Lynn-Lee/Public-Releases` 的产品目录；公开仓库根 `README.md` 继续作为 DataFusionX、SagittaDB、SchemaForge、StreamForge 共享门户独立维护，不由单产品发布流程覆盖。为提升日常开发效率，DataFusionX 已将源码 `main` 提交与商业包发布解耦，商业最终交付仅由正式 tag 或显式手动发布触发。
 
 对齐项：
 
-- 触发条件一致：推送到 `main`、`release/**`、正式 `vX.Y.Z` tag，或手动 `workflow_dispatch`。
-- 版本规则一致：正式 tag 和手动版本生成稳定版本，普通分支生成 `<base>-dev.<run_number>.<short_sha>` 快照版本。
+- 触发策略：`main` 只做源码 CI 和版本记录，`release/**` 生成 RC 候选包，正式 `vX.Y.Z` tag 生成最终商业交付包，手动 `workflow_dispatch` 用于临时包；正式 tag 和显式手动发布才同步 Public-Releases。
+- 版本规则：正式 tag 和手动版本生成稳定版本，`release/**` 生成 `<base>-rc.<run_number>.<short_sha>` 候选版本，手动留空生成 `<base>-dev.<run_number>.<short_sha>` 快照版本。
 - 镜像规则一致：后端和前端商业镜像推送到 GHCR，商业部署包只引用固定版本标签，不使用 `latest`。
 - 公开仓库规则一致：只更新 `products/<product>/` 和 `releases/v<version>/`，不覆盖 Public-Releases 根 README。
 - 安全检查一致：发布包和公开目录不得包含源码、私钥、授权中心 token、真实 License、sourcemap、源码 `build:` 配置或浮动镜像标签。
