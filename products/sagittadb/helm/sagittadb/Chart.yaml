@@ -2,8 +2,8 @@ apiVersion: v2
 name: sagittadb
 description: SagittaDB 矢准数据 — 企业级多引擎数据库管控平台
 type: application
-version: 2.0.0-dev.17.8e8ece9
-appVersion: "2.0.0-dev.17.8e8ece9"
+version: 2.0.1
+appVersion: "2.0.1"
 
 keywords:
   - database
