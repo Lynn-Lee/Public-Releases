@@ -1,0 +1,9 @@
+{
+  "payload": {
+    "artifact": "SagittaDB-Enterprise-v2.1.0.zip",
+    "issued_at": "2026-05-14T05:54:19.696479+00:00",
+    "product": "sagittadb",
+    "sha256": "63bb22fe6ab5a84b2c3e7d303a0527ccca6687b28ca8b1701c2a2837eaaefc6c"
+  },
+  "signature": "mWUTiwZm0EgvB0Y7xgH7pRvWq_BZ4lLvHaUKNw-qN3bncS_a20f2izMJBpbwOQc5SoIjigbxj2OUZoT-YnRYBw"
+}
